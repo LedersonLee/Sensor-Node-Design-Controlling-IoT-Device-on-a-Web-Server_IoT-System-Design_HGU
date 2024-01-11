@@ -1,0 +1,22 @@
+1. NodeMCU(아두이노 코드) 작동하기
+	-보고서의 회로 사진과 같거나 유사하게 회로를 구현하고, 핀맵을 적합하게 연결
+	-초음파 센서(TRIG: nodeMCU_D8, ECHO: nodeMCU_D7)
+	-비접촉식 온도 센서(SCL:D1 , SDA:D2, OLED display와 같이 사용)
+	-비접촉식 온도 센서 사용을 위해 라이브러리 추가 필요(adafruit-mlx90614)
+	--> https://github.com/adafruit/Adafruit-MLX90614-Library 다음 사이트에 접속 후,
+	     라이브러리를 직접 다운받고, 본인 PC 아두이노 library libraries파일 안에 압축 풀기
+	-이외의 사용 library인 DHTesp, adafruit_ssd, EspMQTTClient는 아두이노-툴-라이브러리 관리에서 직접 다운받기
+	-nodeMCU가 통신할 mqtt_broker가 "203.252.106.154"로 입력되어 있음, 필요에 따라 수정 가능
+	-nodeMCU가 연결할 wifi의 경우, ssid와 password는 반드시 본인이 사용할 wifi로 변경해줘야 함!
+
+2. web server 작동하기
+	-hw3.py 파일과 templates 폴더를 같은 디렉토리 상에 위치시키기
+	-templates안의 index_hw3.html은 반드시 templates 폴더 안에 위치시켜야 함
+	-python코드 안에도 마찬가지로 mqtt broker를 "203.252.106.154"로 설정해뒀기 때문에 필요에 따라 변경 가능
+	-flask를 이용하여 web server를 동작하기 위해서 terminal상에서 $sudo python hw3.py 입력 후,
+             인터넷 URL에 자신의 라즈베리파이 ip주소/iot/6를 입력할 것
+
+3. NodeMCU와 web server간의 mqtt 통신 작업
+	-terminal상에 mosquitto를 실행시키기($sudo service mosquitto start)
+	-LED, USBLED, 온습도 값, 조도 값은 web server에서 제어가 가능(버튼 클릭 or URL에 입력)
+	-초음파 센서, 온도 센서의 작동 여부는 아두이노 상의 시리얼 모니터나 구현된 회로의 OLED display로 확인 가능

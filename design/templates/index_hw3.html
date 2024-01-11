@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+	<html>
+	<head>
+		<style>
+			h1{
+			 color:red;
+			}
+		</style>
+		<title>NodeMCU Control</title>
+	</head>
+		<body>
+		<style>		
+			button {
+ 			 background-color: #008CBA;
+			 border: 1px solid #4CAF50;
+ 			 color: black;
+ 			 margin-bottom: 10px;
+ 			 padding: 15px 30px;
+ 			 text-align: center;
+ 			 text-decoration: none;
+  			 display: inline-block;
+  			 font-size: 16px;
+			}
+		</style>
+			<div style='width: 600px; margin: auto; text-align: center;'>
+			<h1>This is Group 6's Web Server</h1>
+			<h2>Accomplished Handong NodeMCU</h2>
+			<a href="/iot/6/ledon"><button>LED On </button></a>
+			<a href="/iot/6/ledoff"><button>LED Off </button></a><br/>
+			<a href="/iot/6/usbledon"><button>USB LED On </button></a>
+			<a href="/iot/6/usbledoff"><button>USB LED Off</button></a><br/>
+			<a href="/iot/6/cds"><button>Get Light Intensity</button></a><br/>
+			<a href="/iot/6/dht22"><button>Get temperature and humidity</button></a><br/>
+			<p><b> Result: {{result}}</b></p>
+			</div>
+		</body>
+	</html>
